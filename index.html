@@ -8,10 +8,20 @@
 </head>
 <body>
 
+<nav class="navbar">
+  <div class="logo">PlayPocket</div>
+  <div class="nav-links">
+    <a href="index.html">ホーム</a>
+    <a href="download.html">ダウンロード</a>
+    <a href="tos.html">利用規約</a>
+    <a href="privacy.html">プライバシー</a>
+  </div>
+</nav>
+
 <header class="hero">
   <h1 class="fade-in">PlayPocket</h1>
   <p class="fade-in delay">オフラインプレイリストアプリ</p>
-  <a href="#download" class="btn fade-in delay2">ダウンロード</a>
+  <a href="download.html" class="btn fade-in delay2">ダウンロード</a>
 </header>
 
 <section class="features">
@@ -25,22 +35,16 @@
 
 <section class="version">
   <h2>バージョン</h2>
-  <p id="version">v1.0.0</p>
+  <p>v1.0.0</p>
 </section>
 
 <section class="changelog">
   <h2>更新履歴</h2>
   <ul>
     <li>v1.0.0 初回リリース</li>
-    <li>軽量設計</li>
     <li>プレイリスト機能</li>
+    <li>軽量高速化</li>
   </ul>
-</section>
-
-<section id="download" class="download">
-  <h2>ダウンロード</h2>
-  <p>総ダウンロード数: <span id="count">0</span></p>
-  <button onclick="downloadApp()" class="btn">Download</button>
 </section>
 
 <script src="script.js"></script>
