@@ -6,14 +6,18 @@ async function fetchDownloads() {
     const data = await res.json();
 
     let total = 0;
-    data.assets.forEach(asset => {
-      total += asset.download_count;
-    });
+    data.assets.forEach(a => total += a.download_count);
 
-    document.getElementById("count").textContent = total;
-  } catch (e) {
-    document.getElementById("count").textContent = "取得失敗";
+    const el = document.getElementById("count");
+    if (el) el.textContent = total;
+  } catch {
+    const el = document.getElementById("count");
+    if (el) el.textContent = "取得失敗";
   }
+}
+
+function downloadApp() {
+  window.location.href = "https://github.com/Play-Pocket/PlayPocket/releases/latest";
 }
 
 fetchDownloads();
