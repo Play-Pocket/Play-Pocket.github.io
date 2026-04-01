@@ -3,10 +3,25 @@ body {
   font-family: sans-serif;
   background: #0a0a0a;
   color: white;
-  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background: #111;
+  position: sticky;
+  top: 0;
+}
+
+.nav-links a {
+  margin-left: 15px;
+  color: white;
+  text-decoration: none;
 }
 
 .hero {
+  text-align: center;
   padding: 100px 20px;
 }
 
@@ -15,7 +30,8 @@ body {
   padding: 10px 20px;
   border-radius: 10px;
   color: white;
-  text-decoration: none;
+  border: none;
+  cursor: pointer;
   transition: 0.3s;
 }
 
@@ -25,8 +41,8 @@ body {
 
 .grid {
   display: flex;
-  gap: 20px;
   justify-content: center;
+  gap: 20px;
 }
 
 .card {
@@ -50,4 +66,9 @@ body {
 
 @keyframes fade {
   to { opacity: 1; }
+}
+
+.page, .download {
+  padding: 50px;
+  text-align: center;
 }
