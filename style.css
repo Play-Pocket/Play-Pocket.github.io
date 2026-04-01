@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #0a0a0a;
+  color: white;
+  text-align: center;
+}
+
+.hero {
+  padding: 100px 20px;
+}
+
+.btn {
+  background: #22c55e;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fade 1s forwards;
+}
+
+.delay { animation-delay: 0.5s; }
+.delay2 { animation-delay: 1s; }
+
+@keyframes fade {
+  to { opacity: 1; }
+}
