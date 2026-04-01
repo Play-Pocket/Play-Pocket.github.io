@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlayPocket</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <h1 class="fade-in">PlayPocket</h1>
+  <p class="fade-in delay">オフラインプレイリストアプリ</p>
+  <a href="#download" class="btn fade-in delay2">ダウンロード</a>
+</header>
+
+<section class="features">
+  <h2>特徴</h2>
+  <div class="grid">
+    <div class="card">オフライン再生</div>
+    <div class="card">シンプルUI</div>
+    <div class="card">高速動作</div>
+  </div>
+</section>
+
+<section class="version">
+  <h2>バージョン</h2>
+  <p id="version">v1.0.0</p>
+</section>
+
+<section class="changelog">
+  <h2>更新履歴</h2>
+  <ul>
+    <li>v1.0.0 初回リリース</li>
+    <li>軽量設計</li>
+    <li>プレイリスト機能</li>
+  </ul>
+</section>
+
+<section id="download" class="download">
+  <h2>ダウンロード</h2>
+  <p>総ダウンロード数: <span id="count">0</span></p>
+  <button onclick="downloadApp()" class="btn">Download</button>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
