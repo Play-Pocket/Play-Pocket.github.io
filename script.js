@@ -5,5 +5,5 @@ function downloadApp() {
   count++;
   localStorage.setItem("downloads", count);
   document.getElementById("count").textContent = count;
-  window.location.href = "#";
+  window.location.href = "https://github.com/Play-Pocket/PlayPocket/releases/latest";
 }
