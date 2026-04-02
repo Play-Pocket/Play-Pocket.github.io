@@ -190,3 +190,23 @@ body {
   height: 18px;
   fill: white;
 }
+
+.version-box {
+  background: #111;
+  padding: 20px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.version-number {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.changelog-box {
+  background: #111;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+  text-align: left;
+}
