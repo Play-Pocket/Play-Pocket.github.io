@@ -110,3 +110,40 @@ body {
   font-size: 14px;
   color: #888;
 }
+
+.visual-footer {
+  margin-top: 80px;
+  height: 300px;
+
+  background: url("footer.jpg") center/cover no-repeat;
+  position: relative;
+}
+
+.visual-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.visual-footer .overlay {
+  position: relative;
+  z-index: 1;
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+.visual-footer h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.visual-footer p {
+  color: #ccc;
+}
