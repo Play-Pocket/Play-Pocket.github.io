@@ -72,3 +72,41 @@ body {
   padding: 50px;
   text-align: center;
 }
+
+.sub {
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
+.counter-box {
+  background: #111;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 20px auto;
+  width: fit-content;
+}
+
+.counter-box span {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.download-buttons {
+  margin: 30px 0;
+}
+
+.btn.big {
+  font-size: 18px;
+  padding: 15px 30px;
+}
+
+.os-text {
+  margin-top: 10px;
+  color: #ccc;
+}
+
+.note {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #888;
+}
