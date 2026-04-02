@@ -3,15 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PlayPocket | オフライン音楽プレイヤー</title>
+  <title>PlayPocket | Windows/Android対応 オフライン音楽プレイヤー</title>
   <meta name="description" content="PlayPocketはWindows/Android向けの軽量オフライン音楽プレイヤー。プレイリスト管理・高速再生・シンプルUIを搭載。無料ダウンロード可能。">
-  <meta name="keywords" content="音楽アプリ, 音楽プレイヤー, オフライン, Windows, Android, プレイリスト, 軽量, music player">
+  <meta name="keywords" content="音楽プレイヤー, オフライン, Windows, Android, music player, プレイリスト, 軽量">
+  <meta name="robots" content="index, follow">
   <meta property="og:title" content="PlayPocket">
-  <meta property="og:description" content="Windows/Android向けオフライン音楽プレイヤー">
+  <meta property="og:description" content="Windows/Android対応のオフライン音楽プレイヤー">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="style.css">
+  <meta property="og:url" content="https://playpocket.f5.si">
+  <meta property="og:image" content="https://playpocket.f5.si/icon.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://playpocket.f5.si">
   <link rel="icon" href="icon.png">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "PlayPocket",
+    "operatingSystem": "Windows, Android",
+    "applicationCategory": "MultimediaApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "JPY"
+    }
+  }
+  </script>
 </head>
+
 <body>
 
 <nav class="navbar">
@@ -26,17 +46,42 @@
 
 <header class="hero">
   <h1 class="fade-in">PlayPocket</h1>
-  <p class="fade-in delay">オフラインプレイリストアプリ</p>
+  <p class="fade-in delay">
+    Windows/Android対応のオフライン音楽プレイヤー
+  </p>
   <a href="download.html" class="btn fade-in delay2">ダウンロード</a>
 </header>
+
+<section class="about">
+  <h2>PlayPocketとは？</h2>
+  <p>
+    PlayPocketはインターネット接続なしで音楽を再生できるWindows/Android対応の音楽プレイヤーです。
+    軽量設計と高速動作を重視し、シンプルで直感的なUIにより快適な音楽体験を提供します。
+  </p>
+</section>
 
 <section class="features">
   <h2>特徴</h2>
   <div class="grid">
-    <div class="card">オフライン再生</div>
-    <div class="card">シンプルUI</div>
-    <div class="card">高速動作</div>
+    <div class="card">オフライン再生（通信不要）</div>
+    <div class="card">シンプルで使いやすいUI</div>
+    <div class="card">軽量・高速動作</div>
   </div>
+</section>
+
+<section class="details">
+  <h2>主な機能</h2>
+  <ul>
+    <li>プレイリスト作成・管理</li>
+    <li>ローカル音楽ファイル再生</li>
+    <li>高速起動・軽量設計</li>
+    <li>完全オフライン対応</li>
+  </ul>
+</section>
+
+<section class="screenshot">
+  <h2>スクリーンショット</h2>
+  <img src="screenshot.png" alt="PlayPocket 音楽プレイヤー UI 画面">
 </section>
 
 <section class="version">
@@ -48,11 +93,19 @@
   <h2>更新履歴</h2>
   <ul>
     <li>v1.0.0 初回リリース</li>
-    <li>プレイリスト機能</li>
-    <li>軽量高速化</li>
+    <li>プレイリスト機能追加</li>
+    <li>軽量・高速化</li>
   </ul>
 </section>
 
+<section class="links">
+  <p>
+    ダウンロードは
+    <a href="download.html">こちらのページ</a>から行えます。
+  </p>
+</section>
+
 <script src="script.js"></script>
+
 </body>
 </html>
