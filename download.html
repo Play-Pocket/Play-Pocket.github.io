@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>ダウンロード - PlayPocket</title>
+  <meta name="description" content="PlayPocketのダウンロードページ。Windows / Android版を無料で入手できます。">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="icon.png">
 </head>
@@ -19,18 +20,66 @@
 </nav>
 
 <section class="download">
-  <h2>ダウンロード</h2>
-  <p>総ダウンロード数: <span id="count">読み込み中...</span></p>
 
-  <button id="winBtn" onclick="downloadWindows()" class="btn" style="display:none;">
-    Windows版をダウンロード
-  </button>
+  <h1>ダウンロード</h1>
+  <p class="sub">あなたの環境に最適なバージョンを選択してください</p>
 
-  <button id="androidBtn" onclick="downloadAndroid()" class="btn" style="display:none;">
-    Android版をダウンロード
-  </button>
+  <div class="counter-box">
+    <p>総ダウンロード数</p>
+    <span id="count">読み込み中...</span>
+  </div>
+
+  <p id="osText" class="os-text"></p>
+
+  <div class="download-buttons">
+    <button id="winBtn" onclick="downloadWindows()" class="btn big" style="display:none;">
+      Windows版をダウンロード
+    </button>
+
+    <button id="androidBtn" onclick="downloadAndroid()" class="btn big" style="display:none;">
+      Android版をダウンロード
+    </button>
+  </div>
+
+  <div class="note">
+    <p>※ ダウンロードは無料です</p>
+    <p>※ セキュリティ警告が出る場合がありますが、安全なファイルです</p>
+  </div>
+
 </section>
 
+<script>
+function detectOS() {
+  const ua = navigator.userAgent.toLowerCase();
+  if (ua.includes("windows")) return "Windows";
+  if (ua.includes("android")) return "Android";
+  return "Other";
+}
+
+function setupUI() {
+  const os = detectOS();
+  const text = document.getElementById("osText");
+
+  const winBtn = document.getElementById("winBtn");
+  const androidBtn = document.getElementById("androidBtn");
+
+  if (os === "Windows") {
+    text.textContent = "あなたのOS: Windows";
+    winBtn.style.display = "inline-block";
+  } else if (os === "Android") {
+    text.textContent = "あなたのOS: Android";
+    androidBtn.style.display = "inline-block";
+  } else {
+    text.textContent = "OSを判別できませんでした（すべて表示）";
+    winBtn.style.display = "inline-block";
+    androidBtn.style.display = "inline-block";
+  }
+}
+
+setupUI();
+</script>
+
 <script src="script.js"></script>
+
 </body>
 </html>
