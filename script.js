@@ -16,8 +16,37 @@ async function fetchDownloads() {
   }
 }
 
-function downloadApp() {
+function detectOS() {
+  const ua = navigator.userAgent;
+
+  if (/android/i.test(ua)) return "Android";
+  if (/windows/i.test(ua)) return "Windows";
+  return "Other";
+}
+
+function setupDownloadButton() {
+  const os = detectOS();
+
+  const winBtn = document.getElementById("winBtn");
+  const androidBtn = document.getElementById("androidBtn");
+
+  if (os === "Windows") {
+    winBtn.style.display = "inline-block";
+  } else if (os === "Android") {
+    androidBtn.style.display = "inline-block";
+  } else {
+    winBtn.style.display = "inline-block";
+    androidBtn.style.display = "inline-block";
+  }
+}
+
+function downloadWindows() {
   window.location.href = "https://github.com/Play-Pocket/PlayPocket/releases/latest";
 }
 
+function downloadAndroid() {
+  window.location.href = "https://example.com/android.apk";
+}
+
 fetchDownloads();
+window.onload = setupDownloadButton;
