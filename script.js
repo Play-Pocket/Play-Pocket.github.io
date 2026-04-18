@@ -1,23 +1,42 @@
 const repo = "Play-Pocket/PlayPocket";
+const releaseUrl = `https://api.github.com/repos/${repo}/releases/latest`;
+
+function setText(id, value) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = value;
+}
 
 async function fetchDownloads() {
+  const el = document.getElementById("count");
+
   try {
-    const res = await fetch(`https://api.github.com/repos/${repo}/releases/latest`);
+    const res = await fetch(releaseUrl, {
+      headers: {
+        "Accept": "application/vnd.github+json"
+      }
+    });
+
+    if (!res.ok) {
+      throw new Error(`GitHub API error: ${res.status}`);
+    }
+
     const data = await res.json();
+    const assets = Array.isArray(data.assets) ? data.assets : [];
 
-    let total = 0;
-    data.assets.forEach(a => total += a.download_count);
+    const total = assets.reduce((sum, a) => {
+      const n = Number(a?.download_count);
+      return sum + (Number.isFinite(n) ? n : 0);
+    }, 0);
 
-    const el = document.getElementById("count");
-    if (el) el.textContent = total;
-  } catch {
-    const el = document.getElementById("count");
+    if (el) el.textContent = String(total);
+  } catch (err) {
     if (el) el.textContent = "取得失敗";
+    console.error(err);
   }
 }
 
 function detectOS() {
-  const ua = navigator.userAgent;
+  const ua = navigator.userAgent || "";
 
   if (/android/i.test(ua)) return "Android";
   if (/windows/i.test(ua)) return "Windows";
@@ -26,17 +45,21 @@ function detectOS() {
 
 function setupDownloadButton() {
   const os = detectOS();
-
   const winBtn = document.getElementById("winBtn");
   const androidBtn = document.getElementById("androidBtn");
 
+  if (!winBtn || !androidBtn) return;
+
+  winBtn.style.display = "none";
+  androidBtn.style.display = "none";
+
   if (os === "Windows") {
-    winBtn.style.display = "inline-block";
+    winBtn.style.display = "inline-flex";
   } else if (os === "Android") {
-    androidBtn.style.display = "inline-block";
+    androidBtn.style.display = "inline-flex";
   } else {
-    winBtn.style.display = "inline-block";
-    androidBtn.style.display = "inline-block";
+    winBtn.style.display = "inline-flex";
+    androidBtn.style.display = "inline-flex";
   }
 }
 
@@ -48,5 +71,30 @@ function downloadAndroid() {
   window.location.href = "https://github.com/Play-Pocket/PlayPocket/releases/download/v1.1.0/PlayPocket-Setup-1.1.0-Android.apk";
 }
 
-fetchDownloads();
-window.onload = setupDownloadButton;
+function setupReveal() {
+  const items = document.querySelectorAll(".reveal");
+
+  if (!("IntersectionObserver" in window)) {
+    items.forEach(el => el.classList.add("show"));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15
+  });
+
+  items.forEach(el => observer.observe(el));
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  fetchDownloads();
+  setupDownloadButton();
+  setupReveal();
+});
