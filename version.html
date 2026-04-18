@@ -6,15 +6,28 @@
 
   <title>バージョン情報 | PlayPocket</title>
   <meta name="description" content="PlayPocketのバージョン情報と更新履歴。最新アップデートや追加機能を確認できます。">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0a0a0a">
+
+  <meta property="og:title" content="バージョン情報 | PlayPocket">
+  <meta property="og:description" content="PlayPocketのバージョン情報と更新履歴">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://playpocket.f5.si/version.html">
+  <meta property="og:image" content="https://playpocket.f5.si/icon.png">
+
+  <link rel="canonical" href="https://playpocket.f5.si/version.html">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="icon.png">
 </head>
-
 <body>
 
-<nav class="navbar">
-  <div class="logo">PlayPocket</div>
-  <div class="nav-links">
+<header class="navbar">
+  <div class="nav-left">
+    <div class="logo">PlayPocket</div>
+    <span class="brand-badge">Offline Music Player</span>
+  </div>
+
+  <nav class="nav-links" aria-label="メインナビゲーション">
     <a href="index.html">ホーム</a>
     <a href="about.html">概要</a>
     <a href="features.html">機能</a>
@@ -22,58 +35,86 @@
     <a href="download.html">ダウンロード</a>
     <a href="tos.html">利用規約</a>
     <a href="privacy.html">プライバシー</a>
-  </div>
-</nav>
-
-<header class="hero">
-  <h1 class="fade-in">バージョン情報</h1>
-  <p class="fade-in delay">最新バージョンと更新履歴</p>
+  </nav>
 </header>
 
-<section class="page">
-  <h2>最新バージョン</h2>
-  <div class="version-box">
-    <p class="version-number">v1.0.0</p>
-    <p>初回リリース版</p>
-  </div>
-</section>
+<main>
+  <header class="hero">
+    <div class="hero-content">
+      <p class="eyebrow fade-in">Version</p>
+      <h1 class="fade-in delay">バージョン情報</h1>
+      <p class="hero-text fade-in delay2">最新バージョンと更新履歴をまとめています。</p>
+    </div>
+  </header>
 
-<section class="page">
-  <h2>更新履歴</h2>
+  <section class="section version">
+    <div class="section-inner">
+      <h2>最新バージョン</h2>
+      <div class="version-box">
+        <span class="version-number">v1.1.0</span>
+        <p>中規模セキュリティアップデート</p>
+      </div>
+    </div>
+  </section>
 
-  <div class="changelog-box">
-    <h3>v1.0.0</h3>
-    <ul>
-      <li>PlayPocket 初回リリース</li>
-      <li>オフライン再生機能</li>
-      <li>プレイリスト管理機能</li>
-      <li>軽量・高速動作</li>
-    </ul>
-  </div>
+  <section class="section changelog">
+    <div class="section-inner">
+      <h2>更新履歴</h2>
 
-</section>
+      <div class="changelog-box">
+        <h3>v1.1.0</h3>
+        <ul>
+          <li>インポート処理の安全性を向上</li>
+          <li>入力データの検証を強化</li>
+          <li>Blob処理とメモリ管理を改善</li>
+          <li>Android版UIを調整</li>
+        </ul>
+      </div>
 
-<section class="page">
-  <h2>今後のアップデート予定</h2>
-  <ul>
-    <li>UIの改善</li>
-    <li>対応フォーマットの追加</li>
-    <li>検索機能の強化</li>
-    <li>テーマ機能（ダーク/ライト）</li>
-  </ul>
-</section>
+      <div class="changelog-box" style="margin-top:18px;">
+        <h3>v1.0.2</h3>
+        <ul>
+          <li>Discord RPC送信を追加</li>
+          <li>Android版のサイドバーUIを改善</li>
+          <li>軽量化と表示調整</li>
+        </ul>
+      </div>
 
-<section class="page">
-  <h2>ダウンロード</h2>
-  <p>
-    最新バージョンを今すぐ入手できます。<br>
-    <a href="download.html" class="btn">ダウンロードページへ</a>
-  </p>
-</section>
+      <div class="changelog-box" style="margin-top:18px;">
+        <h3>v1.0.0</h3>
+        <ul>
+          <li>PlayPocket 初回リリース</li>
+          <li>オフライン再生機能</li>
+          <li>プレイリスト管理機能</li>
+          <li>軽量・高速動作</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section details">
+    <div class="section-inner">
+      <h2>今後のアップデート予定</h2>
+      <ul class="feature-list">
+        <li>UIのさらなる改善</li>
+        <li>対応フォーマットの拡張</li>
+        <li>検索機能の強化</li>
+        <li>テーマ機能（ダーク/ライト）</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section download">
+    <div class="section-inner">
+      <h2>ダウンロード</h2>
+      <p class="section-lead">最新バージョンはダウンロードページから入手できます。</p>
+      <a href="download.html" class="btn btn-primary big">ダウンロードページへ</a>
+    </div>
+  </section>
+</main>
 
 <footer class="site-footer">
   <div class="footer-inner">
-
     <div class="footer-col">
       <h3>このアプリについて</h3>
       <a href="about.html">概要</a>
@@ -92,28 +133,26 @@
     <div class="footer-col">
       <h3>SNS</h3>
 
-      <a class="social-link" href="https://x.com/Takkunlego0916" target="_blank">
-        <svg viewBox="0 0 24 24"><path d="M18.9 2H22l-6.8 7.8L23 22h-6.2l-4.9-6.1L6.5 22H3.4l7.3-8.4L1 2h6.3l4.4 5.5L18.9 2Z"/></svg>
+      <a class="social-link" href="https://x.com/Takkunlego0916" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23 22h-6.2l-4.9-6.1L6.5 22H3.4l7.3-8.4L1 2h6.3l4.4 5.5L18.9 2Z"/></svg>
         X
       </a>
 
-      <a class="social-link" href="https://www.youtube.com/@Takkunlego0916" target="_blank">
-        <svg viewBox="0 0 24 24"><path d="M23 7.5a3 3 0 0 0-2.1-2.1C19 5 12 5 12 5s-7 0-8.9.4A3 3 0 0 0 1 7.5 31.3 31.3 0 0 0 1 12a31.3 31.3 0 0 0 .4 4.5 3 3 0 0 0 2.1 2.1C5.9 19 12 19 12 19s7 0 8.9-.4a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 23 12Z"/></svg>
+      <a class="social-link" href="https://www.youtube.com/@Takkunlego0916" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7.5a3 3 0 0 0-2.1-2.1C19 5 12 5 12 5s-7 0-8.9.4A3 3 0 0 0 1 7.5 31.3 31.3 31.3 0 0 0 1 12a31.3 31.3 0 0 0 .4 4.5 3 3 0 0 0 2.1 2.1C5.9 19 12 19 12 19s7 0 8.9-.4a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 23 12Z"/></svg>
         YouTube
       </a>
 
-      <a class="social-link" href="https://www.tiktok.com/@takkunlego0916" target="_blank">
-        <svg viewBox="0 0 24 24"><path d="M16.7 3c.5 2.9 2.3 4.7 5 5v3.1c-1.8.1-3.5-.4-5-1.4V15c0 4-3.2 7-7.2 7-3.8 0-6.8-3-6.8-6.7 0-3.9 3.1-6.9 7.2-6.9.5 0 1 .1 1.4.1v3.3c-.4-.1-.9-.2-1.4-.2-2.1 0-3.8 1.6-3.8 3.7 0 2 1.7 3.5 3.9 3.5 2.4 0 4-1.6 4-4.2V3Z"/></svg>
+      <a class="social-link" href="https://www.tiktok.com/@takkunlego0916" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.7 3c.5 2.9 2.3 4.7 5 5v3.1c-1.8.1-3.5-.4-5-1.4V15c0 4-3.2 7-7.2 7-3.8 0-6.8-3-6.8-6.7 0-3.9 3.1-6.9 7.2-6.9.5 0 1 .1 1.4.1v3.3c-.4-.1-.9-.2-1.4-.2-2.1 0-3.8 1.6-3.8 3.7 0 2 1.7 3.5 3.9 3.5 2.4 0 4-1.6 4-4.2V3Z"/></svg>
         TikTok
       </a>
 
-      <a class="social-link" href="https://www.instagram.com/takkunmcjp" target="_blank">
-        <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Z"/></svg>
+      <a class="social-link" href="https://www.instagram.com/takkunmcjp" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Z"/></svg>
         Instagram
       </a>
-
     </div>
-
   </div>
 </footer>
 
