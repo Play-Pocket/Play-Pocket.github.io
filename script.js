@@ -41,11 +41,11 @@ function setupDownloadButton() {
 }
 
 function downloadWindows() {
-  window.location.href = "https://github.com/Play-Pocket/PlayPocket/releases/download/v1.0.2/PlayPocket-Setup-1.0.2.exe";
+  window.location.href = "https://github.com/Play-Pocket/PlayPocket/releases/download/v1.1.0/PlayPocket-Setup-1.1.0-Windows.exe";
 }
 
 function downloadAndroid() {
-  window.location.href = "https://github.com/Play-Pocket/PlayPocket/releases/download/v1.0.2/PlayPocket-Setup-1.0.2.apk";
+  window.location.href = "https://github.com/Play-Pocket/PlayPocket/releases/download/v1.1.0/PlayPocket-Setup-1.1.0-Android.apk";
 }
 
 fetchDownloads();
