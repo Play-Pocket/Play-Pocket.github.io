@@ -1,4 +1,6 @@
 const repo = "Play-Pocket/PlayPocket";
+const releaseTag = "v1.1.0";
+const releaseBaseUrl = `https://github.com/Play-Pocket/PlayPocket/releases/download/${releaseTag}`;
 const releaseUrl = `https://api.github.com/repos/${repo}/releases/latest`;
 
 function setText(id, value) {
@@ -8,13 +10,20 @@ function setText(id, value) {
 
 async function fetchDownloads() {
   const el = document.getElementById("count");
+  if (!el) return;
 
   try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 7000);
+
     const res = await fetch(releaseUrl, {
       headers: {
-        "Accept": "application/vnd.github+json"
-      }
+        Accept: "application/vnd.github+json",
+      },
+      signal: controller.signal,
     });
+
+    clearTimeout(timeoutId);
 
     if (!res.ok) {
       throw new Error(`GitHub API error: ${res.status}`);
@@ -23,30 +32,31 @@ async function fetchDownloads() {
     const data = await res.json();
     const assets = Array.isArray(data.assets) ? data.assets : [];
 
-    const total = assets.reduce((sum, a) => {
-      const n = Number(a?.download_count);
+    const total = assets.reduce((sum, asset) => {
+      const n = Number(asset?.download_count);
       return sum + (Number.isFinite(n) ? n : 0);
     }, 0);
 
-    if (el) el.textContent = String(total);
+    el.textContent = String(total);
   } catch (err) {
-    if (el) el.textContent = "取得失敗";
     console.error(err);
+    el.textContent = "取得失敗";
   }
 }
 
 function detectOS() {
-  const ua = navigator.userAgent || "";
+  const ua = (navigator.userAgent || "").toLowerCase();
 
-  if (/android/i.test(ua)) return "Android";
-  if (/windows/i.test(ua)) return "Windows";
+  if (ua.includes("android")) return "Android";
+  if (ua.includes("windows")) return "Windows";
   return "Other";
 }
 
-function setupDownloadButton() {
+function setupDownloadButtons() {
   const os = detectOS();
   const winBtn = document.getElementById("winBtn");
   const androidBtn = document.getElementById("androidBtn");
+  const osText = document.getElementById("osText");
 
   if (!winBtn || !androidBtn) return;
 
@@ -55,46 +65,52 @@ function setupDownloadButton() {
 
   if (os === "Windows") {
     winBtn.style.display = "inline-flex";
+    setText("osText", "あなたのOS: Windows");
   } else if (os === "Android") {
     androidBtn.style.display = "inline-flex";
+    setText("osText", "あなたのOS: Android");
   } else {
     winBtn.style.display = "inline-flex";
     androidBtn.style.display = "inline-flex";
+    setText("osText", "OSを判別できませんでした（すべて表示）");
   }
+
+  if (osText) osText.hidden = false;
 }
 
 function downloadWindows() {
-  window.location.href = "https://github.com/Play-Pocket/PlayPocket/releases/download/v1.1.0/PlayPocket-Setup-1.1.0-Windows.exe";
+  window.location.href = `${releaseBaseUrl}/PlayPocket-Setup-1.1.0-Windows.exe`;
 }
 
 function downloadAndroid() {
-  window.location.href = "https://github.com/Play-Pocket/PlayPocket/releases/download/v1.1.0/PlayPocket-Setup-1.1.0-Android.apk";
+  window.location.href = `${releaseBaseUrl}/PlayPocket-Setup-1.1.0-Android.apk`;
 }
 
 function setupReveal() {
   const items = document.querySelectorAll(".reveal");
 
   if (!("IntersectionObserver" in window)) {
-    items.forEach(el => el.classList.add("show"));
+    items.forEach((el) => el.classList.add("show"));
     return;
   }
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.15
-  });
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
 
-  items.forEach(el => observer.observe(el));
+  items.forEach((el) => observer.observe(el));
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   fetchDownloads();
-  setupDownloadButton();
+  setupDownloadButtons();
   setupReveal();
 });
