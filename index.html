@@ -3,19 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>PlayPocket | Windows/Android対応 オフライン音楽プレイヤー</title>
   <meta name="description" content="PlayPocketはWindows/Android向けの軽量オフライン音楽プレイヤー。プレイリスト管理・高速再生・シンプルUIを搭載。無料ダウンロード可能。">
   <meta name="keywords" content="音楽プレイヤー, オフライン, Windows, Android, music player, プレイリスト, 軽量">
   <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0a0a0a">
+
   <meta property="og:title" content="PlayPocket">
   <meta property="og:description" content="Windows/Android対応のオフライン音楽プレイヤー">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://playpocket.f5.si">
   <meta property="og:image" content="https://playpocket.f5.si/icon.png">
   <meta name="twitter:card" content="summary_large_image">
+
   <link rel="canonical" href="https://playpocket.f5.si">
   <link rel="icon" href="icon.png">
   <link rel="stylesheet" href="style.css">
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -27,94 +32,174 @@
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "JPY"
-    }
+    },
+    "description": "Windows/Android対応の軽量オフライン音楽プレイヤー"
   }
   </script>
 </head>
-
 <body>
 
-<nav class="navbar">
-  <div class="logo">PlayPocket</div>
-  <div class="nav-links">
+<header class="navbar">
+  <div class="nav-left">
+    <div class="logo">PlayPocket</div>
+    <span class="brand-badge">Offline Music Player</span>
+  </div>
+
+  <nav class="nav-links" aria-label="メインナビゲーション">
     <a href="index.html">ホーム</a>
     <a href="download.html">ダウンロード</a>
     <a href="tos.html">利用規約</a>
     <a href="privacy.html">プライバシー</a>
-  </div>
-</nav>
-
-<header class="hero">
-  <h1 class="fade-in">PlayPocket</h1>
-  <p class="fade-in delay">
-    Windows/Android対応のオフライン音楽プレイヤー
-  </p>
-  <a href="download.html" class="btn fade-in delay2">ダウンロード</a>
+  </nav>
 </header>
 
-<section class="about">
-  <h2>PlayPocketとは？</h2>
-  <p>
-    PlayPocketはインターネット接続なしで音楽を再生できるWindows/Android対応の音楽プレイヤーです。
-    軽量設計と高速動作を重視し、シンプルで直感的なUIにより快適な音楽体験を提供します。
-  </p>
-</section>
+<main>
+  <header class="hero">
+    <div class="hero-content">
+      <p class="eyebrow fade-in">Windows / Android 対応</p>
+      <h1 class="fade-in delay">PlayPocket</h1>
+      <p class="hero-text fade-in delay2">
+        インターネットなしで使える、軽量でシンプルなオフライン音楽プレイヤー。
+        プレイリスト管理、快適な再生、直感的な操作をまとめて使えます。
+      </p>
 
-<section class="features">
-  <h2>特徴</h2>
-  <div class="grid">
-    <div class="card">オフライン再生（通信不要）</div>
-    <div class="card">シンプルで使いやすいUI</div>
-    <div class="card">軽量・高速動作</div>
-  </div>
-</section>
+      <div class="hero-actions fade-in delay3">
+        <a href="#download" class="btn btn-primary">ダウンロード</a>
+        <a href="#features" class="btn btn-secondary">機能を見る</a>
+      </div>
 
-<section class="details">
-  <h2>主な機能</h2>
-  <ul>
-    <li>プレイリスト作成・管理</li>
-    <li>ローカル音楽ファイル再生</li>
-    <li>高速起動・軽量設計</li>
-    <li>完全オフライン対応</li>
-  </ul>
-</section>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <strong>完全オフライン</strong>
+          <span>通信なしで再生</span>
+        </div>
+        <div class="stat-card">
+          <strong>軽量設計</strong>
+          <span>高速起動・低負荷</span>
+        </div>
+        <div class="stat-card">
+          <strong>プレイリスト管理</strong>
+          <span>整理しやすいUI</span>
+        </div>
+      </div>
+    </div>
+  </header>
 
-<section class="screenshot">
-  <h2>スクリーンショット</h2>
-  <img src="screenshot.png" alt="PlayPocket 音楽プレイヤー UI 画面">
-</section>
+  <section class="section about">
+    <div class="section-inner">
+      <h2>PlayPocketとは？</h2>
+      <p>
+        PlayPocketは、ローカルに保存した音楽を手軽に再生できるWindows/Android対応の音楽プレイヤーです。
+        シンプルな操作感を重視しつつ、軽快な動作で毎日の音楽再生を快適にします。
+      </p>
+    </div>
+  </section>
 
-<section class="version">
-  <h2>バージョン</h2>
-  <p>v1.0.0</p>
-</section>
+  <section id="features" class="section features">
+    <div class="section-inner">
+      <h2>特徴</h2>
+      <div class="grid">
+        <article class="card reveal">
+          <h3>オフライン再生</h3>
+          <p>通信不要で再生できるので、場所を選ばず使えます。</p>
+        </article>
 
-<section class="changelog">
-  <h2>更新履歴</h2>
-  <ul>
-    <li>v1.0.0 初回リリース</li>
-    <li>プレイリスト機能追加</li>
-    <li>軽量・高速化</li>
-  </ul>
-</section>
+        <article class="card reveal">
+          <h3>シンプルUI</h3>
+          <p>迷いにくいレイアウトで、初めてでも扱いやすい設計です。</p>
+        </article>
 
-<section class="links">
-  <p>
-    ダウンロードは
-    <a href="download.html">こちらのページ</a>から行えます。
-  </p>
-</section>
+        <article class="card reveal">
+          <h3>軽量・高速</h3>
+          <p>起動や操作のレスポンスを重視した、軽快なアプリです。</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-<a href="download.html" class="image-link">
-  <div class="image-overlay">
-    <h2>今すぐダウンロード</h2>
-    <p>PlayPocketを無料で入手</p>
-  </div>
-</a>
+  <section class="section details">
+    <div class="section-inner">
+      <h2>主な機能</h2>
+      <ul class="feature-list">
+        <li>プレイリスト作成・管理</li>
+        <li>ローカル音楽ファイル再生</li>
+        <li>高速起動・軽量設計</li>
+        <li>完全オフライン対応</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section screenshot">
+    <div class="section-inner">
+      <h2>スクリーンショット</h2>
+      <p class="section-lead">実際の画面イメージ</p>
+      <img src="screenshot.png" alt="PlayPocket 音楽プレイヤー UI 画面" loading="lazy">
+    </div>
+  </section>
+
+  <section class="section version">
+    <div class="section-inner">
+      <h2>バージョン</h2>
+      <div class="version-box">
+        <span class="version-number">v1.1.0</span>
+        <p>中規模セキュリティアップデート</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section changelog">
+    <div class="section-inner">
+      <h2>更新履歴</h2>
+      <div class="changelog-box">
+        <ul>
+          <li>v1.1.0 中規模セキュリティアップデート</li>
+          <li>v1.0.2 Android UI改善・Discord RPC追加</li>
+          <li>v1.0.0 初回リリース</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="download" class="section download">
+    <div class="section-inner">
+      <h2>ダウンロード</h2>
+      <p class="section-lead">お使いの環境に合わせて選べます</p>
+
+      <div class="counter-box">
+        <span id="count">--</span>
+        <p>最新リリース合計ダウンロード数</p>
+      </div>
+
+      <div class="download-buttons">
+        <button id="winBtn" class="btn btn-primary big" type="button" onclick="downloadWindows()" style="display:none;">
+          Windows版をダウンロード
+        </button>
+
+        <button id="androidBtn" class="btn btn-primary big" type="button" onclick="downloadAndroid()" style="display:none;">
+          Android版をダウンロード
+        </button>
+      </div>
+
+      <p class="os-text">
+        <span class="desktop-note">Windows / Android 以外の環境では両方のボタンを表示します。</span>
+      </p>
+
+      <p class="note">
+        ※ GitHub Releases の最新版を取得しています。
+      </p>
+    </div>
+  </section>
+
+  <a href="download.html" class="image-link" aria-label="ダウンロードページへ移動">
+    <div class="image-overlay">
+      <h2>今すぐダウンロード</h2>
+      <p>PlayPocketを無料で入手</p>
+    </div>
+  </a>
+</main>
 
 <footer class="site-footer">
   <div class="footer-inner">
-
     <div class="footer-col">
       <h3>このアプリについて</h3>
       <a href="about.html">概要</a>
@@ -133,32 +218,29 @@
     <div class="footer-col">
       <h3>SNS</h3>
 
-      <a class="social-link" href="https://x.com/Takkunlego0916" target="_blank">
-        <svg viewBox="0 0 24 24"><path d="M18.9 2H22l-6.8 7.8L23 22h-6.2l-4.9-6.1L6.5 22H3.4l7.3-8.4L1 2h6.3l4.4 5.5L18.9 2Z"/></svg>
+      <a class="social-link" href="https://x.com/Takkunlego0916" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23 22h-6.2l-4.9-6.1L6.5 22H3.4l7.3-8.4L1 2h6.3l4.4 5.5L18.9 2Z"/></svg>
         X
       </a>
 
-      <a class="social-link" href="https://www.youtube.com/@Takkunlego0916" target="_blank">
-        <svg viewBox="0 0 24 24"><path d="M23 7.5a3 3 0 0 0-2.1-2.1C19 5 12 5 12 5s-7 0-8.9.4A3 3 0 0 0 1 7.5 31.3 31.3 0 0 0 1 12a31.3 31.3 0 0 0 .4 4.5 3 3 0 0 0 2.1 2.1C5.9 19 12 19 12 19s7 0 8.9-.4a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 23 12Z"/></svg>
+      <a class="social-link" href="https://www.youtube.com/@Takkunlego0916" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7.5a3 3 0 0 0-2.1-2.1C19 5 12 5 12 5s-7 0-8.9.4A3 3 0 0 0 1 7.5 31.3 31.3 0 0 0 1 12a31.3 31.3 0 0 0 .4 4.5 3 3 0 0 0 2.1 2.1C5.9 19 12 19 12 19s7 0 8.9-.4a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 23 12Z"/></svg>
         YouTube
       </a>
 
-      <a class="social-link" href="https://www.tiktok.com/@takkunlego0916" target="_blank">
-        <svg viewBox="0 0 24 24"><path d="M16.7 3c.5 2.9 2.3 4.7 5 5v3.1c-1.8.1-3.5-.4-5-1.4V15c0 4-3.2 7-7.2 7-3.8 0-6.8-3-6.8-6.7 0-3.9 3.1-6.9 7.2-6.9.5 0 1 .1 1.4.1v3.3c-.4-.1-.9-.2-1.4-.2-2.1 0-3.8 1.6-3.8 3.7 0 2 1.7 3.5 3.9 3.5 2.4 0 4-1.6 4-4.2V3Z"/></svg>
+      <a class="social-link" href="https://www.tiktok.com/@takkunlego0916" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.7 3c.5 2.9 2.3 4.7 5 5v3.1c-1.8.1-3.5-.4-5-1.4V15c0 4-3.2 7-7.2 7-3.8 0-6.8-3-6.8-6.7 0-3.9 3.1-6.9 7.2-6.9.5 0 1 .1 1.4.1v3.3c-.4-.1-.9-.2-1.4-.2-2.1 0-3.8 1.6-3.8 3.7 0 2 1.7 3.5 3.9 3.5 2.4 0 4-1.6 4-4.2V3Z"/></svg>
         TikTok
       </a>
 
-      <a class="social-link" href="https://www.instagram.com/takkunmcjp" target="_blank">
-        <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Z"/></svg>
+      <a class="social-link" href="https://www.instagram.com/takkunmcjp" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Z"/></svg>
         Instagram
       </a>
-
     </div>
-
   </div>
 </footer>
 
 <script src="script.js"></script>
-
 </body>
 </html>
