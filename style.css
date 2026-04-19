@@ -10,7 +10,7 @@
   --border:rgba(255,255,255,0.08);
   --shadow:0 20px 60px rgba(0,0,0,0.45);
   --max-width:1180px;
-  font-family: "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-family:"Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
 }
 
 *{
@@ -65,6 +65,7 @@ a{
   font-weight:800;
   font-size:1.1rem;
   letter-spacing:.2px;
+  white-space:nowrap;
 }
 
 .brand-badge{
@@ -76,6 +77,7 @@ a{
   border-radius:999px;
   color:var(--muted);
   background:rgba(255,255,255,0.02);
+  white-space:nowrap;
 }
 
 .nav-links{
@@ -148,7 +150,7 @@ a{
   text-decoration:none;
   border:1px solid transparent;
   cursor:pointer;
-  transition:transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+  transition:transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease, opacity .2s ease;
   font-weight:700;
   appearance:none;
 }
@@ -210,7 +212,9 @@ a{
   font-size:.95rem;
 }
 
-.section{
+.section,
+.page,
+.download{
   padding:76px 20px;
 }
 
@@ -219,7 +223,9 @@ a{
   margin:0 auto;
 }
 
-.section h2{
+.section h2,
+.page h2,
+.download h2{
   margin:0 0 12px;
   font-size:clamp(1.7rem, 4vw, 2.4rem);
   letter-spacing:-0.02em;
@@ -232,7 +238,8 @@ a{
   text-align:center;
 }
 
-.about p{
+.about p,
+.page p{
   max-width:850px;
   margin:0 auto;
   text-align:center;
@@ -269,6 +276,7 @@ a{
 .card p{
   margin:0;
   color:var(--muted);
+  text-align:left;
 }
 
 .feature-list{
@@ -286,6 +294,7 @@ a{
   border-radius:14px;
   background:var(--panel);
   border:1px solid var(--border);
+  color:#d7d7d7;
 }
 
 .feature-list li::before{
@@ -370,6 +379,11 @@ a{
   margin-bottom:8px;
 }
 
+.counter-box p{
+  margin:0;
+  color:var(--muted);
+}
+
 .download-buttons{
   margin:28px 0 8px;
   display:flex;
@@ -386,6 +400,10 @@ a{
 
 .os-text{
   margin-top:12px;
+}
+
+.desktop-note{
+  color:var(--muted);
 }
 
 .image-link{
@@ -553,7 +571,9 @@ a:focus-visible{
     padding:62px 16px 54px;
   }
 
-  .section{
+  .section,
+  .page,
+  .download{
     padding:62px 16px;
   }
 
