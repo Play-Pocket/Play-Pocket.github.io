@@ -2,9 +2,9 @@ const repo = "Play-Pocket/PlayPocket";
 const releaseApiUrl = `https://api.github.com/repos/${repo}/releases/latest`;
 
 const CACHE_KEY = "playpocket_release_cache_v1";
-const CACHE_TTL_MS = 60 * 60 * 1000; // 1時間
+const CACHE_TTL_MS = 60 * 60 * 1000;
 const COUNT_CACHE_KEY = "playpocket_download_count_cache_v1";
-const COUNT_TTL_MS = 60 * 60 * 1000; // 1時間
+const COUNT_TTL_MS = 60 * 60 * 1000;
 
 let releaseData = null;
 
@@ -38,7 +38,6 @@ function setCachedJson(key, value) {
       })
     );
   } catch {
-    // 保存失敗時は無視
   }
 }
 
