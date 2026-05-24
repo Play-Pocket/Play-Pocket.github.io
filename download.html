@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" data-page="download">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -88,7 +88,7 @@
     </div>
   </section>
 
-  <a href="index.html#download" class="image-link" aria-label="ホームに戻る">
+  <a href="index.html#download" class="image-link" aria-label="ダウンロードセクションへ戻る">
     <div class="image-overlay">
       <h2>PlayPocket</h2>
       <p>オフラインで快適に音楽を再生</p>
@@ -140,35 +140,5 @@
 </footer>
 
 <script src="script.js"></script>
-<script>
-  function detectOS() {
-    const ua = navigator.userAgent.toLowerCase();
-    if (ua.includes("windows")) return "Windows";
-    if (ua.includes("android")) return "Android";
-    return "Other";
-  }
-
-  function setupUI() {
-    const os = detectOS();
-    const text = document.getElementById("osText");
-    const winBtn = document.getElementById("winBtn");
-    const androidBtn = document.getElementById("androidBtn");
-
-    if (os === "Windows") {
-      text.textContent = "あなたのOS: Windows";
-      winBtn.style.display = "inline-flex";
-    } else if (os === "Android") {
-      text.textContent = "あなたのOS: Android";
-      androidBtn.style.display = "inline-flex";
-    } else {
-      text.textContent = "OSを判別できませんでした（すべて表示）";
-      winBtn.style.display = "inline-flex";
-      androidBtn.style.display = "inline-flex";
-    }
-  }
-
-  setupUI();
-</script>
-
 </body>
 </html>
