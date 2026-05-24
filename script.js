@@ -53,7 +53,7 @@ function normalizeReleaseData(data) {
   const assets = Array.isArray(data?.assets) ? data.assets : [];
   const tagName = typeof data?.tag_name === "string" && data.tag_name.trim()
     ? data.tag_name.trim()
-    : "v1.1.0";
+    : "v1.3.1";
 
   const windowsAsset =
     assets.find((a) => /windows|setup.*exe|\.exe$/i.test(String(a?.name || ""))) || null;
@@ -135,29 +135,36 @@ function setupDownloadButtons() {
   const winBtn = document.getElementById("winBtn");
   const androidBtn = document.getElementById("androidBtn");
   const osText = document.getElementById("osText");
+  const isDownloadPage = document.body?.dataset?.page === "download";
 
   if (!winBtn || !androidBtn) return;
 
   winBtn.style.display = "none";
   androidBtn.style.display = "none";
 
-  const recommended =
-    os === "Windows" ? "Windows版がおすすめです"
-    : os === "Android" ? "Android版がおすすめです"
-    : "お使いの環境に合わせて選べます";
-
-  if (os === "Windows") {
-    winBtn.style.display = "inline-flex";
-    androidBtn.style.display = "inline-flex";
-    setText("osText", `あなたのOS: Windows / ${recommended}`);
-  } else if (os === "Android") {
-    androidBtn.style.display = "inline-flex";
-    winBtn.style.display = "inline-flex";
-    setText("osText", `あなたのOS: Android / ${recommended}`);
+  if (isDownloadPage) {
+    if (os === "Windows") {
+      winBtn.style.display = "inline-flex";
+      setText("osText", "あなたのOS: Windows / Windows版がおすすめです");
+    } else if (os === "Android") {
+      androidBtn.style.display = "inline-flex";
+      setText("osText", "あなたのOS: Android / Android版がおすすめです");
+    } else {
+      winBtn.style.display = "inline-flex";
+      androidBtn.style.display = "inline-flex";
+      setText("osText", "OSを判別できませんでした（両方表示）");
+    }
   } else {
     winBtn.style.display = "inline-flex";
     androidBtn.style.display = "inline-flex";
-    setText("osText", "OSを判別できませんでした（両方表示）");
+
+    if (os === "Windows") {
+      setText("osText", "あなたのOS: Windows / Windows版がおすすめです");
+    } else if (os === "Android") {
+      setText("osText", "あなたのOS: Android / Android版がおすすめです");
+    } else {
+      setText("osText", "OSを判別できませんでした（両方表示）");
+    }
   }
 
   if (osText) osText.hidden = false;
