@@ -53,7 +53,7 @@ function normalizeReleaseData(data) {
   const assets = Array.isArray(data?.assets) ? data.assets : [];
   const tagName = typeof data?.tag_name === "string" && data.tag_name.trim()
     ? data.tag_name.trim()
-    : "v1.3.1";
+    : "v1.4.0";
 
   const windowsAsset =
     assets.find((a) => /windows|setup.*exe|\.exe$/i.test(String(a?.name || ""))) || null;
